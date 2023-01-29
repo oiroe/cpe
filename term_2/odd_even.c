@@ -27,7 +27,7 @@ int	main(void)
 
 	scanf("%d", &row);
 	scanf("%d", &col);
-	if (row == 0 || col == 0)
+	if (row <= 0 || col <= 0)
 	{
 		printf("None\n");
 		return (0);

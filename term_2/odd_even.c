@@ -1,27 +1,15 @@
 #include <stdio.h>
 
-void	show(int odd[], int even[], int n_even, int n_odd)
+void	show(int mat[], int diman)
 {
 	int	i;
 
-	if (n_odd != 0)
+	if (diman != 0)
 	{
 		i = 0;
-		while (i < n_odd)
+		while (i < diman)
 		{
-			printf("%d ", odd[i]);
-			i++;
-		}
-		printf("\n");
-	}
-	else
-		printf("None\n");
-	if (n_even != 0)
-	{
-		i = 0;
-		while (i < n_even)
-		{
-			printf("%d ", even[i]);
+			printf("%d ", mat[i]);
 			i++;
 		}
 		printf("\n");
@@ -86,6 +74,7 @@ int	main(void)
 		}
 		i++;
 	}
-	show(odd_mat, even_mat, even, odd);
+	show(odd_mat, odd);
+	show(even_mat, even);
 	return (0);
 }

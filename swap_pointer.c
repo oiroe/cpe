@@ -1,6 +1,15 @@
 #include <stdio.h>
 #include <limits.h>
 
+void	swap(int *s1, int *s2)
+{
+	int	temp;
+
+	temp = *s1;
+	*s1 = *s2;
+	*s2 = temp;
+}
+
 int	main(void)
 {
 	int	diman;
@@ -13,8 +22,6 @@ int	main(void)
 	int	count_min2;
 	int	max1, max2;
 	int	min1, min2;
-	int	input;
-	int	temp;
 
 	count_max2 = 0;
 	count_min2 = 0;
@@ -26,6 +33,7 @@ int	main(void)
 	}
 	i = 0;
 	min1 = INT_MAX;
+	max1 = INT_MIN;
 	while (i < diman)
 	{
 		if (mat[i] > max1)
@@ -36,7 +44,7 @@ int	main(void)
 	}
 	i = 0;
 	min2 = INT_MAX;
-	max2 = 0;
+	max2 = INT_MIN;
 	while (i < diman)
 	{
 		if (mat[i] < min2 && mat[i] > min1)
@@ -51,9 +59,7 @@ int	main(void)
 		}
 		i++;
 	}
-	temp = mat[count_max2];
-	mat[count_max2] = mat[count_min2];
-	mat[count_min2] = temp;
+	swap(&mat[count_min2], &mat[count_max2]);
 	i = 0;
 	while (i < diman)
 	{

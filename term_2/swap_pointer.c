@@ -47,12 +47,12 @@ int	main(void)
 	max2 = INT_MIN;
 	while (i < diman) //in here we check the second max/min value
 	{
-		if (mat[i] < min2 && mat[i] > min1) //if the mat[i] is less than min1 and mat[i] is less than first min then mat[i] will become the min2
+		if (mat[i] < min2 && mat[i] > min1) //if the mat[i] is less than min2 and mat[i] is more than first min then mat[i] will become the min2
 		{
 			min2 = mat[i];
 			count_min2 = i; //I need to store the index token I think it will easy to use
 		}
-		if (mat[i] > max2 && mat[i] < max1) //if the mat[i] is more than max1 and mat[i] is more than first max then mat[i] will become the max2
+		if (mat[i] > max2 && mat[i] < max1) //if the mat[i] is more than max2 and mat[i] is less than first max then mat[i] will become the max2
 		{
 			max2 = mat[i];
 			count_max2 = i; //I need to store the index token I think it will easy to use
